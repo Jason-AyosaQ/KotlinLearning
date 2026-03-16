@@ -1,33 +1,45 @@
 package org.example.clase6
 
 fun main(){
-    
+
     println("-------Clase--------")
     // Lo nuevo aquí es que hay variables cuya expresión Son comparaciones
-    val emailsRecibidos = 15
-    val emailsEnviados = 20
+    val emailRecibidos = 15
+    val emailsEnviados = 16
     val limiteEmails = 20
-    val tieneEmails = emailsRecibidos > 0
-    val excedeEnviados = emailsEnviados >= limiteEmails
-    val sonIguales = emailsEnviados == emailsRecibidos
-    println("Tiene emails? $tieneEmails")
-    println("Alcanzamos el límite de Emails? $excedeEnviados")
-    println("Los emails recibidos son iguales a los enviados? $sonIguales")
-    val email = "example.@gmail.com"
+
+    val tieneEmails = emailRecibidos > 16
+    val excedeEnviados  = emailsEnviados >= limiteEmails
+
+    println("Tiene emails ? ${tieneEmails} ")
+    println("Alcanzamos el limite de emails enviados ? ${excedeEnviados} ")
+
+    val sonIguales = emailRecibidos == emailsEnviados
+
+    println("Son iguales ? :$sonIguales")
+    val sonDiferentes = emailRecibidos != emailsEnviados
+    println("Son diferentes? :$sonDiferentes ")
+
+
+    val email = "user@example.com"
     val password = "1234"
+
     val tieneArroba = email.contains("@")
-    val tienePunto = email.contains(".")
-    val emailValido = tienePunto && tieneArroba
-    println("Es un correo válido? $emailValido")
+    val tienePunto = email.contains(".com")
+    val esEmailValido = tieneArroba && tienePunto //AND
 
-    val passwordCorto =password.length < 6
+
+    println("Es email valido? $esEmailValido")
+
+    val passwordCorto = password.length < 6
     val passwordLargo = password.length > 20
-    val passwordProblematico = passwordCorto && passwordLargo
-    println("Es una clave problematica? $passwordProblematico")
+    val passwordProblematico = passwordCorto || passwordLargo // OR
+    println("Es una contraseña problematica ? $passwordProblematico")
 
-    val emailInvalido = !emailValido
-    println("Es un emaIL invalido? $emailInvalido")
-  
+    val emailInvalido = !esEmailValido //! true - false; false - true
+
+    println("Es un email invalido?$emailInvalido")
+
 
     /*
     Ejercicio: valida email: debe tener @ y . no debe contener test
